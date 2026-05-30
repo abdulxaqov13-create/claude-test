@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tug'ilgan Kunim | Birthday Countdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background-animation">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="content">
+            <h1 class="title">
+                <span class="emoji">🎂</span>
+                <span class="text">Tug'ilgan Kunim</span>
+                <span class="emoji">🎉</span>
+            </h1>
+            
+            <div class="birthday-input-section">
+                <label for="birthdayInput">Tug'ilgan kuningizni kiriting:</label>
+                <input type="date" id="birthdayInput" />
+                <button id="setButton" class="set-button">Saqlash</button>
+            </div>
+
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="number" id="days">0</span>
+                                <span class="label">Kun</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="countdown-box">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="number" id="hours">0</span>
+                                <span class="label">Soat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="countdown-box">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="number" id="minutes">0</span>
+                                <span class="label">Daqiqa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="countdown-box">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <span class="number" id="seconds">0</span>
+                                <span class="label">Soniya</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <div class="balloons">
+                <div class="balloon balloon-1">🎈</div>
+                <div class="balloon balloon-2">🎈</div>
+                <div class="balloon balloon-3">🎈</div>
+                <div class="balloon balloon-4">🎈</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

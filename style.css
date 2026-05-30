@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    perspective: 1000px;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+/* Background Animation */
+.background-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 12s;
+}
+
+.particle:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+    animation-duration: 14s;
+}
+
+.particle:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+    animation-duration: 16s;
+}
+
+.particle:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+    animation-duration: 13s;
+}
+
+.particle:nth-child(5) {
+    left: 70%;
+    animation-delay: 3s;
+    animation-duration: 15s;
+}
+
+.particle:nth-child(6) {
+    left: 85%;
+    animation-delay: 5s;
+    animation-duration: 11s;
+}
+
+.particle:nth-child(7) {
+    left: 15%;
+    animation-delay: 2.5s;
+    animation-duration: 17s;
+}
+
+.particle:nth-child(8) {
+    left: 60%;
+    animation-delay: 4.5s;
+    animation-duration: 14s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50vh) translateX(100px) scale(1);
+    }
+    100% {
+        transform: translateY(-20vh) translateX(-100px) scale(0);
+    }
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title */
+.title {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: titleBounce 2s infinite ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title .emoji {
+    font-size: 4rem;
+    animation: rotate3D 3s infinite ease-in-out;
+}
+
+@keyframes titleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rotate3D {
+    0%, 100% {
+        transform: rotateY(0deg) scale(1);
+    }
+    50% {
+        transform: rotateY(360deg) scale(1.2);
+    }
+}
+
+/* Birthday Input Section */
+.birthday-input-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    animation: cardFloat 3s infinite ease-in-out;
+}
+
+@keyframes cardFloat {
+    0%, 100% {
+        transform: translateZ(0) rotateX(0deg);
+    }
+    50% {
+        transform: translateZ(20px) rotateX(2deg);
+    }
+}
+
+.birthday-input-section label {
+    display: block;
+    font-size: 1.2rem;
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.birthday-input-section input {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.birthday-input-section input:focus {
+    outline: none;
+    border-color: #764ba2;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.set-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    transform-style: preserve-3d;
+}
+
+.set-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+}
+
+.set-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Countdown Container */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.countdown-box {
+    perspective: 1000px;
+}
+
+.card {
+    width: 150px;
+    height: 180px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: cardPulse 2s infinite ease-in-out;
+}
+
+.card:hover {
+    animation: cardFlip 1s ease-in-out;
+}
+
+@keyframes cardPulse {
+    0%, 100% {
+        transform: scale(1) rotateY(0deg);
+    }
+    50% {
+        transform: scale(1.05) rotateY(5deg);
+    }
+}
+
+@keyframes cardFlip {
+    0%, 100% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(360deg);
+    }
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    backface-visibility: hidden;
+    transform: translateZ(50px);
+}
+
+.number {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.label {
+    font-size: 1.2rem;
+    color: #667eea;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* Message */
+.message {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    min-height: 50px;
+    animation: messagePulse 2s infinite ease-in-out;
+}
+
+@keyframes messagePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Balloons */
+.balloons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.balloon {
+    position: absolute;
+    font-size: 3rem;
+    animation: balloonFloat 6s infinite ease-in-out;
+}
+
+.balloon-1 {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.balloon-2 {
+    left: 30%;
+    animation-delay: 1.5s;
+}
+
+.balloon-3 {
+    right: 30%;
+    animation-delay: 3s;
+}
+
+.balloon-4 {
+    right: 5%;
+    animation-delay: 4.5s;
+}
+
+@keyframes balloonFloat {
+    0% {
+        top: 100%;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: -20%;
+        transform: translateX(50px) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+/* Celebration Effect */
+.celebration {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #f0f;
+    animation: confettiFall 3s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        top: -10%;
+        transform: translateX(0) rotateZ(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        transform: translateX(100px) rotateZ(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .title .emoji {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-container {
+        gap: 15px;
+    }
+    
+    .card {
+        width: 120px;
+        height: 150px;
+    }
+    
+    .number {
+        font-size: 3rem;
+    }
+    
+    .label {
+        font-size: 1rem;
+    }
+    
+    .birthday-input-section {
+        padding: 20px;
+    }
+    
+    .birthday-input-section input,
+    .set-button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 80px;
+        height: 120px;
+    }
+    
+    .number {
+        font-size: 2rem;
+    }
+    
+    .label {
+        font-size: 0.8rem;
+    }
+}
